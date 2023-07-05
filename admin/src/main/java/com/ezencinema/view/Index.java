@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ezencinema.database.MemIpImpl;
 import com.ezencinema.database.MemberDto;
 import com.ezencinema.database.MemberImpl;
+import com.ezencinema.database.UserIpDto;
 
 @WebServlet("/index.do")
 public class Index extends HttpServlet {
@@ -24,6 +26,12 @@ public class Index extends HttpServlet {
 		List <MemberDto> list = mem.selectMem();
 		for(MemberDto a: list) {
 			out.println(a.getId());
+		}
+		MemIpImpl memIp = new MemIpImpl();
+		List <UserIpDto> lists = memIp.selectMemIp();
+		for(UserIpDto a: lists) {
+			out.println(a.getUserid());
+			out.println(a.getIp());
 		}
 	}
 

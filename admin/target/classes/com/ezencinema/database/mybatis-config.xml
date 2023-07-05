@@ -4,6 +4,7 @@
 <configuration>
 <typeAliases>
 	<typeAlias type="com.ezencinema.database.MemberDto" alias="memDto"></typeAlias>
+	<typeAlias type="com.ezencinema.database.UserIpDto" alias="ipDto"></typeAlias>
 </typeAliases>
     <!-- DB접속 -->
     <environments default="development">
@@ -20,6 +21,7 @@
     
     <mappers>
        <mapper resource="com/ezencinema/database/memberMapper.xml" />
+       <mapper resource="com/ezencinema/database/user_ipMapper.xml" />
        <!-- 
      	<mapper resource="com/ezencinema/database/memberMapper.xml" />
         -->
